@@ -15,5 +15,9 @@ In Git, branches are used to isolate work in progress from the main project. Aft
 ![](./img/02.branch_3.png)
 ![](./img/02.branch_4.png)
 
-## 03. Collaboration and Remote Repository
+## 03. Pushing the Local git repository to the Github repository
+This contains the process of commiting and pushing the local repository to github.
+![](./img/03.pushing_local-repo_1.png)
+![](./img/03.pushing_local-repo_2.png)
+
 
