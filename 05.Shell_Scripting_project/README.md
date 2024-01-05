@@ -111,16 +111,20 @@ THis script performs the basic and slightly more complex arithmetic operations u
 `num1=10 and num2=5`: Define two variables (num1 and num2) with numeric values.
 Basic arimethic calculations are performed using `(+, -, *, /, %)` using the defined variables. The results is stored in variables (sum, difference, product, quotient, remainder).
 
-More complex calculations are done using `power_of_2=$((num1 ** 2))`: Calculate the square of num1 and store the result in power_of_2. `square_root=$(echo "sqrt($num2)" | bc)`: Use the bc (calculator) command to calculate the square root of num2 and store the result in square_root. The final result is dispalayed using `echo`.
-.[](./img/4th_shell_script_calculations.png)
+More complex calculations are done using `power_of_2=$((num1 ** 2))`: Calculate the square of num1 and store the result in power_of_2. `square_root=$(echo "sqrt($num2)" | bc -l)`: Use the bc (calculator) command to calculate the square root of num2 and store the result in square_root. The final result is dispalayed using `echo`.
+![](./img/4th_shell_script_calculations.png)
 
 ## File Backup and TimeStamping
 This script creates a backup of all files from a specified source directory to a backup directory.
 
-`source_dir="/path/to/source_directory"`: Specifies the source directory that contains the files to be backed up.    
+`source_dir="./"`: Specifies the source directory that contains the files to be backed up.    
 `backup_dir="/path/to/backup_directory"`: Specifies the backup directory where the files will be copied.     
 `timestamp=$(date +"%Y%m%d%H%M%S")`: Generates a timestamp using the current date and time in the format "YearMonthDayHourMinuteSecond".     
 `backup_dir_with_timestamp="$backup_dir/backup_$timestamp"`: Constructs the backup directory path by appending the timestamp to the backup directory.    
 `mkdir -p "$backup_dir_with_timestamp"`: Creates the backup directory along with any necessary parent directories (-p flag).     
 `cp -r "$source_dir"/* "$backup_dir_with_timestamp"`: Recursively copies all files from the source directory to the backup directory.
 `echo "Backup completed. Files copied to: $backup_dir_with_timestamp"`: Prints a message indicating that the backup process is complete and specifies the destination directory.
+
+![](./img/backup1.png)
+![](./img/backup2.png)
+![](./img/backup3.png)
