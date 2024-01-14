@@ -31,4 +31,4 @@ The MySQL server is configured to allow connections from the remote host using `
 
 To confirm that MySQL server has been successful, MySQL is accessed using `sudo mysql -u remote_user -h 172.31.47.40 -p` and `show databases;` is used to display the available databases.
 
-![](./img/show%20databases.png)
+![](./img/connect%20remote%20server.png)
