@@ -6,10 +6,6 @@ Implementing a WordPress website with LVM (Logical Volume Management) storage ma
 
 ## Workflow
 
-![](/img/it%20work2.png)
-![](/img/it%20work3.png)
-![](/img/its%20working%202.png)
-
 1. Build an instance on AWS using redhat as the operating system and SSH as the key-pair which will be used as the webserver.
 ![](./img/webserver-redhat.png)
 
@@ -113,10 +109,13 @@ The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set
 
 24. The MySQl is setup, The security group is setup to allow only access from the DB server only from the web server ip address. Mysql-client is installed `sudo yum install mysql`, further configurations is done on the wordpress.
 ![](./img/mysql%20setup.png)
-![](/img/security%20group%20and%20imbound%20rules%20configuration.png)
-![](/img/wordpress%20configuration.png)
+![](./img/security%20group%20and%20imbound%20rules%20configuration.png)
+![](./img/wordpress%20configuration.png)
 
 25. The mysql in the database server is accessed from webserver. 
-![](/img/privateMySQL-IP.png)
+![](./img/privateMySQL-IP.png)
 
 26. Some configurations are done to access wordpress on the web.
+![](./img/it%20work2.png)
+![](./img/it%20work3.png)
+![](./img/its%20working%202.png)
