@@ -13,7 +13,6 @@ Implementing a WordPress website with LVM (Logical Volume Management) storage ma
 ![](./img/volumes%20created.png)
 The volumes are all attached to the webserver.
 ![](./img/attach%20volumne.png)
-![](./img/attach%20volumne2.png)
 
 3. The instance is confirmed if the volumnes have been added using `lsblk`, then  `ls /dev` is used to see a list of all block devices and partitions. Then `df -h` to see all mounts and free space in the server
 ![](./img/volume%20confirmation.png)
@@ -109,7 +108,6 @@ The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set
 ![](./img/conf%20mysql.png)
 
 24. The MySQl is setup, The security group is setup to allow only access from the DB server only from the web server ip address. Mysql-client is installed `sudo yum install mysql`, further configurations is done on the wordpress.
-
 ![](./img/mysql%20setup.png)
 ![](/img/security%20group%20and%20imbound%20rules%20configuration.png)
 ![](/img/wordpress%20configuration.png)
@@ -118,7 +116,6 @@ The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set
 ![](/img/privateMySQL-IP.png)
 
 26. Some configurations are done to access wordpress on the web.
-
 ![](/img/it%20work2.png)
 ![](/img/it%20work3.png)
 ![](/img/its%20working%202.png)
