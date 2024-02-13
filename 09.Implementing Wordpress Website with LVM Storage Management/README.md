@@ -4,8 +4,6 @@
 
 Implementing a WordPress website with LVM (Logical Volume Management) storage management is a strategic approach to enhance performance, scalability, and flexibility. LVM provides a dynamic and efficient way to manage disk space, allowing administrators to resize, move, and allocate storage resources without interrupting services. In the context of a WordPress website, this setup becomes particularly beneficial for handling the dynamic and growing nature of content.
 
-WordPress, a widely-used content management system, powers millions of websites globally. Integrating LVM into the storage infrastructure of a WordPress setup offers advantages in terms of storage administration and optimization. LVM allows for the creation of logical volumes, which act as flexible storage pools that can be easily resized or migrated to accommodate changing storage demands.
-
 ## Workflow
 
 1. Build an instance on AWS using redhat as the operating system and SSH as the key-pair which will be used as the webserver.
