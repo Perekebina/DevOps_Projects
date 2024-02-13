@@ -17,7 +17,6 @@ The volumes are all attached to the webserver.
 
 3. The instance is confirmed if the volumnes have been added using `lsblk`, then  `ls /dev` is used to see a list of all block devices and partitions. Then `df -h` to see all mounts and free space in the server
 ![](./img/volume%20confirmation.png)
-![](./img/volume%20confirmation2.png)
 
 4. To create a single partition on each of the three NVMe disks using `gdisk`,  I used `sudo gdisk /dev/nvme3n1`, `sudo gdisk /dev/nvme1n1` and `sudo gdisk /dev/nvme2n1`.
 ![](./img/partioning%20volume1.png)
@@ -25,7 +24,6 @@ The volumes are all attached to the webserver.
 The volumes are formatted using `mkfs -t ext4 /dev/nvme1n1, mkfs -t ext4 /dev/nvme2n1, mkfs -t ext4 /dev/nvme3n1`
 
 5. Next is to install LVM using `sudo yum install lvm2` the check for partitions using `sudo lvmdiskscan`
-![](./img/install%20LVM.png)
 ![](./img/check%20partitions.png)
 
 6. The `pvcreate` is used to mark each of the three disks as physical volumes using `sudo pvcreate /dev/nvme2n1`, `sudo pvcreate /dev/nvme1n1` and `sudo pvcreate /dev/nvme3n1`
@@ -64,10 +62,7 @@ The extracted UUID is added to the `sudo vi /etc/fstab`
 
 
 15. The DB Server is configured just like the webserver following the same process.
-![](./img/DB%20Server%20conf1.png)
-![](./img/DB%20Server%20conf2.png)
 ![](./img/DB%20Server%20conf3.png)
-![](./img/DB%20Server%20conf4.png)
 ![](./img/DB%20Server%20conf5.png)
 ![](./img/db-lv.png)
 ![](./img/lvs%20confirmation.png)
@@ -104,7 +99,6 @@ The `sudo systemctl enable httpd` and `sudo systemctl start httpd` are used to e
 `cp wordpress/wp-config-sample.php wordpress/wp-config.php`
 `cp -R wordpress /var/www/html/`
 These commands extract the WordPress files, remove the compressed archive, create a wp-config.php file from the sample, and copy the entire WordPress directory to the /var/www/html/ location.
-![](./img/wordpress%20installation2.png)
 
 The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set the ownership of the WordPress directory to the Apache user and group, the `sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R` is used to apply SELinux context for read-write access. The command `sudo setsebool -P httpd_can_network_connect=1` is used to allow Apache to make network connections and `sudo setsebool -P httpd_can_network_connect=1` is used to ensuring proper permissions and security for the WordPress installation.
 
