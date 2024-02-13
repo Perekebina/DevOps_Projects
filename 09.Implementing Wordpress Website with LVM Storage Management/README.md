@@ -130,6 +130,7 @@ The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set
 ![](/img/privateMySQL-IP.png)
 
 28. Some configurations are done to access wordpress on the web.
+
 ![](/img/it%20work2.png)
 ![](/img/it%20work3.png)
 ![](/img/its%20working%202.png)
