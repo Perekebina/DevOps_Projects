@@ -52,7 +52,7 @@ The volumes are formatted using `mkfs -t ext4 /dev/nvme1n1, mkfs -t ext4 /dev/nv
 
 12. This command uses `rsync` to synchronize the contents of the `/home/recovery/logs` directory with the `sudo mkdir -p /var/log/html` directory, ensuring that the logs from the recovery location are copied to the system's main log directory.
 
-13. The entries in the /etc/fstab file are used to define how disk partitions, filesystems, or remote filesystems should be mounted into the file system hierarchy. The `sudo blkid` command is used to display information about block devices, including UUIDs (Universally Unique Identifiers) and other attributes, helping to identify and manage storage devices on a Linux system.  The app and log UUID is extracted.
+13. The entries in the /etc/fstab file are used to define how disk partitions, filesystems, or remote filesystems should be mounted into the file system hierarchy. The `sudo blkid` command is used to display information about block devices, including UUIDs (Universally Unique Identifiers)
 ![](./img/UUID.png)
 The extracted UUID is added to the `sudo vi /etc/fstab`
 ![](./img/update%20UUID.png)
@@ -69,7 +69,6 @@ The extracted UUID is added to the `sudo vi /etc/fstab`
 ![](./img/DB%20Server%20conf3.png)
 ![](./img/DB%20Server%20conf4.png)
 ![](./img/DB%20Server%20conf5.png)
-![](./img/vgs.png)
 ![](./img/db-lv.png)
 ![](./img/lvs%20confirmation.png)
 
@@ -93,7 +92,7 @@ sudo rsync -av /home/recovery/logs/. /var/log
 The `sudo systemctl enable httpd` and `sudo systemctl start httpd` are used to enable and start the Apache HTTP Server (httpd) on the system using systemctl.
 ![](./img/apache%20start.png)
 
-19. `sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \ sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm && \ sudo yum module list php && \ sudo yum module reset php && \ sudo yum module enable php:remi-7.4 && \ sudo yum install php php-opcache php-gd php-curl php-mysqlnd && \ sudo systemctl start php-fpm && \ sudo systemctl enable php-fpm && \ sudo setsebool -P httpd_execmem 1` This single command sequence installs EPEL and Remi repositories, lists PHP modules, resets the PHP module, enables PHP 7.4 from Remi, installs PHP and required extensions, starts and enables PHP-FPM, and sets SELinux boolean for Apache execution.
+19. This single command sequence installs EPEL and Remi repositories, lists PHP modules, resets the PHP module, enables PHP 7.4 from Remi, installs PHP and required extensions, starts and enables PHP-FPM, and sets SELinux boolean for Apache execution.
 ![](./img/installations.png)
 
 20. Created a directory named "wordpress," navigated into it, and downloaded the latest WordPress package using `mkdir wordpress` and `cd   wordpress` and 
