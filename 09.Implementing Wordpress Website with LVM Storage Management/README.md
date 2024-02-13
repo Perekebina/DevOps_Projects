@@ -117,13 +117,10 @@ The command `sudo chown -R apache:apache /var/www/html/wordpress` is used to set
 23. These commands access the MySQL command-line interface, create a WordPress database, define a user with specific privileges, flush privileges, display databases, and exit the MySQL environment.
 ![](./img/conf%20mysql.png)
 
-24. MySQl setup
+24. The MySQl is setup, The security group is setup to allow only access from the DB server only from the web server ip address. Mysql-client is installed `sudo yum install mysql`, further configurations is done on the wordpress.
+
 ![](./img/mysql%20setup.png)
-
-25. The security group is setup to allow only access from the DB server only from the web server ip address.
 ![](/img/security%20group%20and%20imbound%20rules%20configuration.png)
-
-26. mysql-client is installed `sudo yum install mysql`, further configurations is done on the wordpress.
 ![](/img/wordpress%20configuration.png)
 
 27. The mysql in the database server is accessed from webserver. 
